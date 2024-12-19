@@ -1,0 +1,69 @@
+/* Importing the Inter font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+/* Base styles */
+body {
+    font-family: 'Inter', sans-serif; /* Applying the Inter font to the body */
+}
+
+/* Styles for the "or" separator in forms */
+.or {
+    position: relative;
+    margin: 10px 0;
+}
+
+.or::before {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    content: '';
+    left: 0;
+    top: 45%;
+    background-image: linear-gradient(
+        to right, 
+        rgba(113, 113, 113, 0.55) 0 40%, transparent 40% 60%, rgba(113, 113, 113, 0.55) 60%
+    );
+}
+
+/* Input styles */
+input {
+    border: 1px solid #71717188; /* Default border color */
+    border-radius: 15px;
+    padding: 10px;
+    background-color: #1C1C1E; /* Background color for inputs */
+    color: white; /* Text color for inputs */
+    transition: background-image 0.5s, opacity .5s, border .5s; /* Smooth transition for input state changes */
+}
+
+/* Styles for invalid and valid input states */
+input:invalid:not(:placeholder-shown) {
+    border-color: red; /* Border color for invalid input */
+    background-image: url('../assets/checked_red.png'); /* Background image for invalid input */
+}
+
+input:valid:not(:placeholder-shown) {
+    background-image: url('../assets/checked_green.png'); /* Background image for valid input */
+    background-color: rgba(0, 128, 0, 0.1); /* Light green background for valid input */
+}
+
+/* Additional styles for input validation feedback */
+input:invalid:not(:placeholder-shown), 
+input:valid:not(:placeholder-shown) {
+    background-size: 20px; /* Size of the validation icon */
+    background-repeat: no-repeat; /* Prevent background image repeat */
+    background-position: calc(100% - 10px); /* Position of the validation icon */
+}
+
+/* Styles for the single sign-on button */
+.sso {
+    background-color: #2C2C2E; /* Background color for SSO button */
+    color: white; /* Text color for SSO button */
+    padding: 10px; /* Padding for SSO button */
+    border-radius: 15px; /* Rounded corners for SSO button */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for the SSO button */
+.sso:hover {
+    background-color: #4D4D4D; /* Darker shade on hover */
+}
